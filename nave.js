@@ -5,7 +5,7 @@ function Nave(context, teclado, imagem, imgExplosao) {
    this.x = 0;
    this.y = 0;
    this.velocidade = 0;
-   this.spritesheet = new Spritesheet(context, imagem, 3, 2);
+   this.spritesheet = new Spritesheet(context, imagem, 3, 1);
    this.spritesheet.linha = 0;
    this.spritesheet.intervalo = 100;
    this.imgExplosao = imgExplosao;
@@ -28,14 +28,14 @@ Nave.prototype = {
          this.y -= incremento;
          
       if (this.teclado.pressionada(SETA_ABAIXO) &&
-               this.y < this.context.canvas.height - 48)
+               this.y < this.context.canvas.height - 70)
          this.y += incremento;
    },
    desenhar: function() {
       if (this.teclado.pressionada(SETA_ESQUERDA))
-         this.spritesheet.linha = 1;
+         this.spritesheet.linha = 0;
       else if (this.teclado.pressionada(SETA_DIREITA))
-         this.spritesheet.linha = 2;
+         this.spritesheet.linha = 0;
       else
          this.spritesheet.linha = 0;      
       
@@ -51,9 +51,9 @@ Nave.prototype = {
       // Estes valores vão sendo ajustados aos poucos
       var rets = 
       [ 
-         {x: this.x+2, y: this.y+19, largura: 9, altura: 13},
-         {x: this.x+13, y: this.y+3, largura: 10, altura: 33},
-         {x: this.x+25, y: this.y+19, largura: 9, altura: 13}
+         {x: this.x+22, y: this.y+40, largura: 9, altura: 13},
+         {x: this.x+43, y: this.y+3, largura: 10, altura: 40},
+         {x: this.x+65, y: this.y+40, largura: 9, altura: 13}
       ];
       
       // Desenhando os retângulos para visualização
@@ -106,7 +106,7 @@ Nave.prototype = {
    },
    posicionar: function() {
       var canvas = this.context.canvas;
-      this.x = canvas.width / 2 - 18;  // 36 / 2
-      this.y = canvas.height - 48;
+      this.x = canvas.width / 2 - 48;  // 36 / 2
+      this.y = canvas.height - 85;
    }
 }

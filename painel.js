@@ -1,7 +1,7 @@
 function Painel(context, nave) {
    this.context = context;
    this.nave = nave;
-   this.spritesheet = new Spritesheet(context, nave.imagem, 3, 2);
+   this.spritesheet = new Spritesheet(context, nave.imagem, 3, 1);
    this.pontuacao = 0;
 }
 Painel.prototype = {
