@@ -97,9 +97,8 @@
          context.drawImage(imagens.espaco, 0, 0, canvas.width,
                            canvas.height);
          
-         // Texto "Carregando"
+         // Nome do jogo"
          context.fillStyle = 'yellow';
-         //context.strokeStyle = 'yellow';
          context.font = '100px times neue roman';
          context.fillText("Star Wars", 60, 200);
          context.strokeText("Star Wars", 60, 200);
@@ -110,7 +109,7 @@
          var tamanho = carregadas / totalImagens * tamanhoTotal;
          context.fillStyle = 'white';
          //context.fillRect(100, 250, tamanho, 20);
-
+         
          //Texto sobre o game
          context.fillStyle = 'yellow';
          context.font = '20px times neue roman';
@@ -135,8 +134,7 @@
          espaco = new Fundo(context, imagens.espaco);
          estrelas = new Fundo(context, imagens.estrelas);
          nuvens = new Fundo(context, imagens.nuvens);
-         nave = new Nave(context, teclado, imagens.nave, 
-                         imagens.explosao);
+         nave = new Nave(context, teclado, imagens.nave, imagens.explosao);
          painel = new Painel(context, nave);
          
          // Ligações entre objetos
@@ -178,7 +176,7 @@
             // Tiro com Ovni
              if ( (o1 instanceof Tiro && o2 instanceof Ovni) ||
                  (o1 instanceof Ovni && o2 instanceof Tiro) )
-               painel.pontuacao += 10;
+               painel.pontuacao += 5;
          }
       }
       

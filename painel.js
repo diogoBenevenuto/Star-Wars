@@ -12,12 +12,12 @@ Painel.prototype = {
       // Reduz o desenho pela metade
       this.context.scale(0.5, 0.5);
       
-      var x = 20;
-      var y = 20;
+      var x = 40;
+      var y = 40;
       
       for (var i = 1; i <= this.nave.vidasExtras; i++) {
          this.spritesheet.desenhar(x, y);
-         x += 40;
+         x += 80;
       }
       
       // Torna a dobrar
@@ -28,9 +28,9 @@ Painel.prototype = {
       
       // Pontuação
       ctx.save();
-      ctx.fillStyle = 'white';
-      ctx.font = '18px sans-serif';
-      ctx.fillText(this.pontuacao, 100, 27);
+      ctx.fillStyle = 'yellow';
+      ctx.font = '20px times neue roman';
+      ctx.fillText("Pontos: " + this.pontuacao, 370, 45);
       ctx.restore();   
    }
 }

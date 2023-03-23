@@ -17,11 +17,11 @@ Nave.prototype = {
       var incremento = 
           this.velocidade * this.animacao.decorrido / 1000;
       
-      if (this.teclado.pressionada(SETA_ESQUERDA) && this.x > 0)
+      if (this.teclado.pressionada(SETA_ESQUERDA) && this.x > -15)
          this.x -= incremento;
          
       if (this.teclado.pressionada(SETA_DIREITA) && 
-               this.x < this.context.canvas.width - 36)
+               this.x < this.context.canvas.width - 80)
          this.x += incremento;
          
       if (this.teclado.pressionada(SETA_ACIMA) && this.y > 0)
