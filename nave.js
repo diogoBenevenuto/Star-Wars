@@ -91,7 +91,7 @@ Nave.prototype = {
          exp1.fimDaExplosao = function() {
             nave.vidasExtras--;
             
-            if (nave.vidasExtras < 0) {
+            if (nave.vidasExtras <= 0) {
                if (nave.acabaramVidas) nave.acabaramVidas();
             }
             else {
