@@ -188,12 +188,13 @@
                var agora = new Date().getTime();
                var decorrido = agora - this.ultimoOvni;
                
-               if (decorrido > 1000) {
+               if (decorrido > (1000 - painel.pontuacao )) {
                   novoOvni();
                   this.ultimoOvni = agora;
+                  console.log(painel.pontuacao)
                }
             }
-         };
+         }
          
          animacao.novoProcessamento(criadorInimigos);
       }
